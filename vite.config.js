@@ -11,7 +11,7 @@ export default defineConfig({
   server:{
     proxy:{
       "/todo":{
-        target: "https://realtodolistutitbestbackend-production.up.railway.app/",
+        target: "http://localhost:5000",
         changeOrigin: true,
         secure: false
       }

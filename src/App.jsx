@@ -19,7 +19,7 @@ const App = () =>{
   useEffect(()=>{
     const TodoList = async() =>{
       try {
-        const response = await fetch(`/todo`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/todo`);
         if(!response.ok){
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -41,7 +41,7 @@ const App = () =>{
           }
 
           try {
-            const response = await fetch("/todo", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/todo`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({text: input})
@@ -68,7 +68,7 @@ const App = () =>{
       }
     try {
       
-      const res = await fetch("/todo/clear", {method: "DELETE"});
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/todo/clear`, {method: "DELETE"});
       if(!res.ok){
         throw new Error("Failed to clear completed tasks")
       }
@@ -92,7 +92,7 @@ const App = () =>{
     const updatedtask = !Boolean(task.completed);
     setTodo(todo.map((i) => i.id === id ? {...i, completed: updatedtask} : i));
     try{
-      const res = await fetch(`/todo/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/todo/${id}`, {
         method: "PUT", 
         headers: {"Content-Type" : "application/json"},
         body: JSON.stringify({completed: updatedtask})
