@@ -18,10 +18,11 @@ This is the frontend interface for the Real TodoList application. It provides a 
 ## 🛠 Tech Stack
 
 - **Vite** (Frontend tooling)
-- **JavaScript**
-- **HTML & CSS**
+- **React**
+- **Tailwind CSS**
 - **Railway** (Backend hosting)
 - **Neon** (Database)
+- **Netlify**
 
 ---
 
