@@ -1,16 +1,99 @@
-# React + Vite
+# Real TodoList Frontend — Utitbest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend interface for the Real TodoList application. It provides a clean, interactive UI for creating, managing, completing, and reordering tasks. The frontend communicates with a Node.js backend hosted on Railway and uses a Neon PostgreSQL database.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎨 Features
 
-## React Compiler
+- Add new tasks
+- Mark tasks as completed or active
+- Delete all completed tasks
+- Drag-and-drop task reordering
+- Real-time updates synced with backend API
+- Fully responsive UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Vite** (Frontend tooling)
+- **React**
+- **Tailwind CSS**
+- **Railway** (Backend hosting)
+- **Neon** (Database)
+- **Netlify**
+
+---
+
+## 📦 Installation
+
+Clone the project:
+
+```bash
+git clone https://github.com/your-username/real-todolist-frontend.git
+cd real-todolist-frontend
+npm install
+
+
+▶️ Running Locally
+Start the development server:
+
+npm run dev
+Your app will be available at:
+
+http://localhost:5173
+
+
+🌐 Connecting to the Backend
+Update your API base URL inside your frontend code:
+
+const API_BASE = "https://your-backend-url.up.railway.app";
+
+Example:
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss()
+  ],
+  server:{
+    proxy:{
+      "/todo":{
+        target: "https://realtodolistutitbestbackend-production.up.railway.app/", //production mode or yur local backend url
+        changeOrigin: true,
+        secure: false
+      }
+    }
+  }
+})
+
+use it like this:
+await fetch(/todo){
+  fetch from backend in your frontend;
+}  
+
+🚀 Deployment
+You can deploy this frontend to any static hosting provider:
+
+Netlify
+
+Vercel
+
+GitHub Pages
+
+Cloudflare Pages
+
+Just build the project:
+
+npm run build
+Then upload the dist/ folder to your hosting provider.
+
+🧠 Author
+Built by Utitbest
+Location: Uyo, Akwa Ibom State, Nigeria Year: 2025
