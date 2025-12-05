@@ -131,7 +131,7 @@ const App = () =>{
 
       <div className="absolute gap-2.5 flex flex-col left-1/2 top-1/2 h-auto transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg shadow-xl rounded-2xl container">
         <div className="w-full items-center justify-between flex">
-          <h1 className="select-none text-[40px] text-white font-bold">TODO</h1>
+          <h1 className="select-none text-[40px] text-white font-bold">UT-AB</h1>
           <span className="select-none" onClick={toggleTheme}>
             
            {theme === "light" ? (<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
